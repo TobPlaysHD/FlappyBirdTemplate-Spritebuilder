@@ -173,7 +173,7 @@
     }
     
     if ((_sinceTouch > 0.5f)) {
-        [character.physicsBody applyAngularImpulse:40000.f*delta];
+        [character.physicsBody applyAngularImpulse:-40000.f*delta];
     }
     
     physicsNode.position = ccp(physicsNode.position.x - (character.physicsBody.velocity.x * delta), physicsNode.position.y);
@@ -250,7 +250,7 @@
     {
         @try
         {
-            character.physicsBody.velocity = ccp(80.f, clampf(character.physicsBody.velocity.y, -MAXFLOAT, 200.f));
+            character.physicsBody.velocity = ccp(80.f, clampf(character.physicsBody.velocity.y, -MAXFLOAT, 50.f));
             
             [super update:delta];
         }
